@@ -15,7 +15,7 @@
             let sideBarNav = document.getElementById('menu-nav');
             let menuContainer = document.getElementById('menu-container');
 
-            animateLoadScreen(bodyDiv, loadingDiv);
+            animateLoadScreen(sideBarNav, menuContainer, bodyDiv, loadingDiv);
 
             sideBar.onclick = function () {
                 if(menuContainer.style.width == '0vw'){
@@ -28,10 +28,11 @@
             };
         }
 
-        const animateLoadScreen = function (bodyDiv, loadingDiv) {
+        const animateLoadScreen = function (sideBarNav, menuContainer, bodyDiv, loadingDiv) {
             bodyDiv.style = "opacity: 0;";
 
-            
+            sideBarNav.style = "opacity: 0; transition: 0.3s;";
+            menuContainer.style = "width: 0vw; transition: 0.5s;";
 
             setTimeout(() => {
                 loadingDiv.style = "opacity: 0;";
