@@ -17,10 +17,24 @@
 
             animateLoadScreen(sideBarNav, menuContainer, bodyDiv, loadingDiv);
 
+            window.onresize = function() {
+                if(menuContainer.style.width !== '0vw'){
+                    if(window.innerWidth <= 600){
+                        menuContainer.style = "width: 100vw; transition: 0.5s;";
+                    }else {
+                        menuContainer.style = "width: 400px; transition: 0.5s;";
+                    }
+                }
+            }
+
             sideBar.onclick = function () {
                 if(menuContainer.style.width == '0vw'){
                     sideBarNav.style = "opacity: 1; transition: 0.3s;";
-                    menuContainer.style = "width: 400px; transition: 0.5s;";
+                    if(window.innerWidth <= 600){
+                        menuContainer.style = "width: 100vw; transition: 0.5s;";
+                    }else {
+                        menuContainer.style = "width: 400px; transition: 0.5s;";
+                    }
                 } else {
                     sideBarNav.style = "opacity: 0; transition: 0.3s;";
                     menuContainer.style = "width: 0vw; transition: 0.5s;";
@@ -39,8 +53,16 @@
                 bodyDiv.style = "opacity: 1; transition: 0.3s;";
                 console.log("Delayed for 1 second.");
             }, 1500);
+        }
 
-            
+        const sideBarResizing = function () {
+            if(menuContainer.style.width !== '0vw'){
+                if(window.innerWidth <= 600){
+                    menuContainer.style = "width: 100vw; transition: 0.5s;";
+                }else {
+                    menuContainer.style = "width: 400px; transition: 0.5s;";
+                }
+            }
         }
 
     </script>
@@ -60,12 +82,23 @@
                     <li class="menu-lateral-li"><a href="https://ayaneo.com/product/AYANEO-2.html" target="_blank">AYANEO 2</a></li>
                     <li class="menu-lateral-li"><a href="https://www.ayaneo.com/product/AYANEO-2S.html" target="_blank">AYANEO 2S</a></li>
                     <li class="menu-lateral-li"><a href="https://www.ayaneo.com/product/AYANEOAIR.html" target="_blank">AYANEO AIR</a></li>
+                    <li class="menu-lateral-li"><a href="https://www.ayaneo.com/product/AYANEO-2S.html" target="_blank">AYANEO 2S</a></li>
+                    <li class="menu-lateral-li"><a href="https://www.ayaneo.com/product/AYANEOAIR.html" target="_blank">AYANEO AIR</a></li>
                 </ul>
             </nav>
         </aside>
         <header>
             <h1>AYANEO</h1>
         </header>
+        <nav id="menu-nav-bar-id">
+            <ul class="menu-nav-bar-ul">
+                <li class="menu-nav-bar-li"><a href="https://ayaneo.com/product/AYANEO-2.html" target="_blank">AYANEO 2</a></li>
+                <li class="menu-nav-bar-li"><a href="https://www.ayaneo.com/product/AYANEO-2S.html" target="_blank">AYANEO 2S</a></li>
+                <li class="menu-nav-bar-li"><a href="https://www.ayaneo.com/product/AYANEOAIR.html" target="_blank">AYANEO AIR</a></li>
+                <li class="menu-nav-bar-li"><a href="https://www.ayaneo.com/product/AYANEO-2S.html" target="_blank">AYANEO 2S</a></li>
+                <li class="menu-nav-bar-li"><a href="https://www.ayaneo.com/product/AYANEOAIR.html" target="_blank">AYANEO AIR</a></li>
+            </ul>
+        </nav>
         <div id="corpo">
             <div class="artigo">
                 <h2>AYANEO 2</h2>
@@ -108,6 +141,8 @@
                 </ul>
             </div>
         </div>
+
+        <div class="lds-ellipsis-page"><div></div><div></div><div></div><div></div></div>
 
         
         <footer>
