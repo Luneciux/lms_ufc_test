@@ -262,6 +262,13 @@ nav ul ul li {
     }
 }
 
-.menu-nav-bar-li:hover{
+
+#inside:active ul, .menu-nav-bar-ul-inside:hover {
+    display: block;
+    transition: all 0 1;
+}
+
+.menu-nav-bar-li:hover .menu-nav-bar-ul-inside{
+    display: block;
     box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
